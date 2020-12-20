@@ -2,14 +2,14 @@ defmodule Atbash do
   @moduledoc """
   Atbash cipher implementation
   """
-
+  import Enum
   @doc """
   Get a map of english alphabet and reverse alphabet
   """
   defp get_alphabet_map() do
-    alphabet = Enum.map(Enum.to_list(?a..?z), fn(n) -> <<n>> end)
-    Enum.zip(alphabet, Enum.reverse(alphabet))
-    |> Enum.into(%{})
+    alphabet = map(to_list(?a..?z), fn(n) -> <<n>> end)
+    zip(alphabet, reverse(alphabet))
+    |> into(%{})
   end
 
   @doc """
@@ -32,8 +32,8 @@ defmodule Atbash do
   defp encrypt_string(string, reverse \\ :false) do
     alphabet_map = prepare_alphabet(get_alphabet_map(), reverse)
     String.graphemes(string)
-    |> Enum.map(fn g -> alphabet_map[g] end)
-    |> Enum.join("")
+    |> map(fn g -> alphabet_map[g] end)
+    |> join("")
   end
 
   @doc """
