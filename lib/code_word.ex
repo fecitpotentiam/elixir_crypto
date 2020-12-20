@@ -34,7 +34,6 @@ defmodule CodeWord do
   """
   defp encrypt_string(string, code_word, reverse \\ :false) do
     alphabet_map = prepare_alphabet(get_alphabet_map(code_word), reverse)
-    IO.inspect(alphabet_map)
     String.graphemes(string)
     |> map(fn g -> alphabet_map[g] end)
     |> join("")
