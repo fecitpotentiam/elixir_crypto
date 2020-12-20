@@ -1,6 +1,10 @@
 # Crypto
 
-**TODO: Add description**
+**Classic crypto ciphers implementations**
+
++ Atbash
++ Caesar 
++ CodeWord
 
 ## Installation
 
@@ -10,7 +14,7 @@ by adding `kv` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:kv, "~> 0.1.0"}
+    {:elixir_crypto, "~> 0.1.0"}
   ]
 end
 ```
